@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <title>Encriptador</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reset.css">
+
+
+</head>
+
+<body>
+  <header class="encabezado">
+    <!-- logo de encabezado -->
+    <h1 img src="img/logo1.svg" alt="icono2"></h1>
+  </header>
+  <main>
+    <div class="contenedor-section">
+      <!-- section 1 ubicacion de texarea & encriptar -->
+      <section class="contenedor-uno">
+
+        <div class="d1v-DeTexto">
+          <textarea cols="30" rows="10" class="area-text" placeholder="Ingrese el texto aqui." autofocus=""></textarea>
+          <p class="m-1" class="d1v-2-sinAsentos">
+            <img src="img/Vector-Indicaciones.svg" alt="icono">
+            Solo letras minusculas y sin acentos
+          </p>
+          <nav class="contenedor-botones">
+            <button class="botonE">Encriptar</button>
+            <button class="botonD">Desencriptar</button>
+            <button class="botonBS">Borrar Secreto</button>
+          </nav>
+      </section>
+      <!-- section 2 columna de la derecha -->
+      <section class="contenedor-dos">
+
+        <img class="imagen-principal " src="img/imagen-principal.svg" alt="Logo2">
+
+        <div class="contenedor-de-texto-se2 ">
+          <b class="p-contenedor-mensaje">Ningún mensaje fue encontrado</b>
+
+          <p class="p-contenedor-mensajeDe">Ingresa el texto que desees encriptar o desencriptar.</p>
+
+          <nav class="contenedor-copiar">
+            <button onclick="copyResult()" class="botonC">Copiar</button>
+          </nav>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <p class="copyright">&copy Copyright Alura Anthony R- 2022</p>
+    <script type="text/javascript" src="js/jscrip.js"></script>
+  </footer>
+</body>
+
+</html>
