@@ -1,19 +1,6 @@
 *{
 
-  margin: 0;
-  padding: 0%;
-  border: 0;
-  box-sizing: border-box;
-  vertical-align: baseline;
-}
-header {
-  width: 100%;
-  height: 40px;
-  margin: 0%;
-  background-color: #0a3871;
-}
-html
-body {
+main{
   display: grid;
   grid-template-rows: auto lfr auto;
   min-height: 100vh;
@@ -51,16 +38,13 @@ nav{
 }
 
 /*secciones activas */
-.contenedor-uno {
-  
-  padding: 0%;
-  margin: 0%;
-  border: 0%;
-
-  width: 65%;
-  height: 80vh;
+#contenedor-uno {
   float: left;
   text-align: center;
+  
+}
+#contenedor-dos {
+    text-align: center;
   
 }
 /* stilos aplicados en seccion 1*/
@@ -148,7 +132,7 @@ nav{
 }
 /* area de resultados imagen y texto */
 /* GRUPO 2*/
-.contenedor-dos {
+#contenedor-dos {
 
   
 top: 50px;
