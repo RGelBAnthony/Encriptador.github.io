@@ -3,9 +3,14 @@ border: 0%;
 margin: 0%;
 
 }
+header{
+width: 10%;
+height: 10%;
+
+}
 main{
   display: grid;
-  height: 85vh;
+  height: 80vh;
   max-width: 100%;
 
 }
@@ -15,6 +20,7 @@ main{
   flex-direction: row;
   justify-content: space-around;
   background: #d8dfe8;
+  margin-top: 5px;
  
 }
 #contenedor-uno {
@@ -24,9 +30,7 @@ main{
   align-self: stretch;
   
 }
-  
-  
-  }
+
 .area-text{
   width: 95%;
   height: 70%;
@@ -80,14 +84,11 @@ main{
   cursor: pointer;
 }
 .botonD {
+  cursor: pointer;
   margin-left: 1rem;
   width: 10rem;
   height: 4rem;
   border-radius: 24px;
-  border: #0a3871
-  color: #0a3871;
-  background: #d8dfe8;
-  cursor: pointer;
 }
 /* boton de borrado*/
 .botonBS {
@@ -100,6 +101,20 @@ main{
   border-radius: 24px;
   cursor: pointer;
 }
+#contenedor-dos {
+  flex-basis: 20%;
+    order: 2;
+  
+    border-radius: 3rem;
+   
+    text-align: center;
+    transition: 50ms;
+
+    box-shadow: 1px 1px 30px black, -1px -10px  #0A3871;
+    background: #ffffff;
+  
+  
+  }
 /* GRUPO 2*/
 .imagen-principal {
   height: 50%;
@@ -118,7 +133,7 @@ main{
 #botonC {
   width: 10rem;
   height: 4rem;
-  border: none;
+  border: solid black;
   border-radius: 19px;
 
   font-size:120%;
@@ -134,7 +149,7 @@ footer {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  height: 15vh;
+  height: 6vh;
   background-color: #0a3871;
 }
 .copyright {
@@ -151,3 +166,27 @@ footer {
 .ocultar {
   display: none;
 }
+
+@media screen and (max-width: 450px){
+  #container {
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+    width: 100%;
+    
+  }
+
+  #contenedor-uno ,div ,button{
+    margin-bottom: 1fr;
+      width: 100%;
+      height: 50%;
+
+  }
+  .imagen-principal ,header {
+
+    display: none;   
+  }
+
+}
+
