@@ -1,110 +1,69 @@
-//puentes de botones
-var areaCapturadora = document.querySelector(".area-text");
-var EncriptarDatos = document.querySelector(".botonE");
-var DesencriptarDatos = document.querySelector(".botonD");
-var copiaDDatos = document.querySelector(".botonC");
-var resultado = document.querySelector(".contenedor-dos");
-img.style.display = "none"
+const texto = document.getElementById('area-text');
+const imagen = document.getElementById('imagen-principal');
+const resultado = document.getElementById('texto-final');
+const copiar = document.getElementById('botonC');
+const error = document.getElementById('m-1');
+const acentos = /[ÁÉÍÓÚÜÑáéíóúüñ]/;
 
-var borradoS = document.querySelector(".botonBS");
+const encriptacion = texto => {
+    return texto
+    .replace(/a/g, "ai")
+    .replace(/e/g, "enter")
+    .replace(/i/g, "imes")
+    .replace(/o/g, "ober")
+    .replace(/u/g, "ufat")
+}
+const desencriptacion = texto => {
+    return texto
+    .replace(/enter/g, "e")
+    .replace(/imes/g, "i")
+    .replace(/ai/g, "a")
+    .replace(/ober/g, "o")
+    .replace(/ufat/g, "u")
+}
 
-// gatillo de funcion
-EncriptarDatos.onclick = encriptar;
-DesencriptarDatos.onclick = keyText;
-copiaDDatos.onclick = copyResult;
+let  textoFinal = '';
 
+function verAcentos( texto ) {
+    let resultado = acentos.test( texto )
+    if ( resultado != false ) {
+        error.classList.add( "error" ); 
+    } else {
+        error.classList.remove( "error" );
+    }
+    return  resultado;
+}
 
-//opsion de borrado
-borradoS.onclick = botonBS;
-
-//funciones
 function encriptar() {
-  // Obtener la cadena a encriptar
-  var str = areaCapturadora.value;
-
-  var encrypted = "";
-
-  for (let i = 0; i < str.length; i++) {
-    switch (str[i]) {
-      case "a":
-        encrypted += "ai";
-        break;
-      case "e":
-        encrypted += "enter";
-        break;
-      case "i":
-        encrypted += "imes";
-        break;
-      case "o":
-        encrypted += "ober";
-        break;
-      case "u":
-        encrypted += "ufat";
-        break;
-      default:
-        encrypted += str[i];
+    textoFinal = '';
+    let textoInicial = texto.value.toLowerCase();
+    let acento = verAcentos( textoInicial );
+    if ( textoInicial.trim() == '' ) {
+        window.location.reload();
     }
-  }
-
-  // Asignar la cadena encriptada al elemento de resultado
-  resultado.value = encrypted;
+    if ( textoInicial != ''  &&  acento != true ) {
+        textoFinal = encriptacion( textoInicial );
+        imagen.classList.add( "ocultarImagen" );
+        resultado.textContent = textoFinal;
+        copiar.removeAttribute('hidden');
+    }    
 }
-function keyText() {
-  // Obtener la cadena a desencriptar
-  var str = areaCapturadora.value;
 
-  var decrypted = "";
-
-  for (let i = 0; i < str.length; i++) {
-    switch (str[i]) {
-      case "ai":
-        decrypted += "a";
-        break;
-      case "enter":
-        decrypted += "e";
-        break;
-      case "imes":
-        decrypted += "i";
-        break;
-      case "ober":
-        decrypted += "o";
-        break;
-      case "ufat":
-        decrypted += "u";
-        break;
-      default:
-        decrypted += str[i];
+function desencriptar() {
+    textoFinal = '';
+    let textoInicial = texto.value.toLowerCase();
+    let acento = verAcentos( textoInicial );
+    if ( textoInicial.trim() == '' ) {
+        window.location.reload();
     }
-  }
-
-  // Asignar la cadena desencriptada al elemento de resultado
-  resultado.value = decrypted;
+    if ( textoInicial != ''  &&  acento != true ) {
+        textoFinal = desencriptacion( textoInicial );
+        imagen.classList.add( "ocultarImagen" );
+        resultado.textContent = textoFinal;
+        copiar.removeAttribute('hidden');
+    }    
 }
-function copyResult() {
-  // Seleccionar el texto del elemento de resultado
-  resultado.select();
 
-  // Ejecutar la acción de copiar
-  document.execCommand("copy");
-}
-function bBorrado() {
-  // Borrar el contenido del campo de entrada
-  areaCapturadora.value = "";
-}
-function bBorradoS() {
-  // Borrar el contenido del campo de entrada
-  resultado.value = "";
-}
-//Bloqueo de mayusculas asentuaciones
-areaCapturadora.addEventListener("input", function (event) {
-  // Obtener el valor del campo de entrada
-  var value = event.target.value;
-
-  // Validar el contenido del campo de entrada
-  var isValid = value.match(/^[a-zñáéíóú]*$/);
-
-  // Si el contenido no es válido, eliminar las letras minúsculas y las tildes
-  if (!isValid) {
-    event.target.value = value.replace(/[A-ZÑÁÉÍÓÚ]/g, "");
-  }
-});
+copiar.addEventListener('click', ()=>{
+    navigator.clipboard.writeText( textoFinal );
+})
