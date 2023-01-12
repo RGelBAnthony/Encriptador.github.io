@@ -1,0 +1,40 @@
+/*configuracion area de resultado*/
+
+/*area de resultado*/
+
+.resultado {
+  padding-top: 4rem;
+  margin: auto;
+  resize: none;
+  border: none;
+  outline: none;
+
+  font-size: 20px;
+  color: #141e30;
+  text-align: center;
+  display: flex;
+}
+.contenedorIT{
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 20px;
+    color: #000428;
+   
+}
+/*Botones de interaccion animacion*/
+.botones:hover {
+  color: #ffffff;
+  background: #000428;
+  background: -webkit-linear-gradient(to right, #004e92, #000428);
+  background: linear-gradient(to right, #004e92, #000428);
+}
+.botones:active {
+  transform: scale(1.01);
+}
+.ocultar{
+  display: none;
+}
+/*
+background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur (1px);

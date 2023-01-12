@@ -12,147 +12,109 @@ border: 0%;
 margin: 0%;
 }
 body{
-  background: rgb(10,56,113);
-  
-  background-image: linear-gradient( 135deg, #79F1A4 10%, #0E5CAD 100%);
+  background: conic-gradient(from 315deg, #79F1A5, #0F5DAD);
+  overflow: hidden;
+ 
 }
 main{
   display: grid;
-  height: 83vh;
+  height: 85vh;
   max-width: 100%;
+  
 }
-/* ubicaciones*/
 #container{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  color:  #141E30;
 }
 #contenedor-uno {
   flex-basis: 70%;
- order: 1;
+  order: 1;
   text-align: center;
+  box-sizing: border-box;
+
+}
+#area-text{
+  padding-top: 2%;
+  width: 90%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 20px;
+  color: #000428;
+  text-align: center;
+  box-shadow: 1rem 1rem 40px black;
+  
+}
+#m-1 {
+  color: #FEFEFE;
+  margin-bottom: 1rem;
+  margin-right: 60%;
 }
 nav{
   display: flex;
   flex-direction: row;
   justify-content: center;
   padding: 3%;
- 
-
 }
-#area-text{
-  padding-top: 2%;
-  width: 90%;
-  height: 60%;
-  border: none;
-  outline: none;
-  resize: none;
-
-  font-size: 20px;
-  border-radius: 32px;
-  color: #141E30;
- 
-  text-align: center;
-  
-  box-shadow: 1rem 1rem 30px black;
-  
-}
-/* indicaciones*/
-#m-1 {
-  color: #141E30;
-  margin-bottom: 1rem;
-}
-/*Botones de interaccion ubicacion y style*/
-#botonE {
+.botones{
   margin-left: 1rem;
   width: 10rem;
   height: 4rem;
   border: none;
-  border-radius: 24px;
+  border-radius: 22px;
   
   transition: 1s;
   cursor: pointer;
 
   color: #e9ecf8;
-  background: #141E30;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #243B55, #141E30); 
-  background: linear-gradient(to top, #243B55, #141E30);
-}
-#botonD {
-  width: 10rem;
-  height: 4rem;
-  margin-left: 1rem;
-  border: none;
-  cursor: pointer;
-  border-radius: 24px;
-  color: #e9ecf8;
-  background: #141E30;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #243B55, #141E30); 
-  background: linear-gradient(to top, #243B55, #141E30);
-}
-/* boton de borrado*/
-#botonBS {
-  width: 10rem;
-  height: 4rem;
-  margin-left: 1rem;
-  border: none;
-  border-radius: 24px;
-  cursor: pointer;
-
-  color: #e9ecf8;
-  background: #141E30;  /* fallback for old browsers */
+  background: #141E30;  
   background: -webkit-linear-gradient(to top, #243B55, #141E30); 
   background: linear-gradient(to top, #243B55, #141E30);
 }
 #contenedor-dos {
-  flex-basis: 20%;
     order: 2;
-  
-    border-radius: 3rem;
+    height: 9999%;
+    margin: auto;
+ 
+    flex-basis: 20%;
    
     text-align: center;
+    
+   background: #ffffff;
+    box-shadow: 1rem 1rem 2rem black, -1px -10px   #000000;
 
-    box-shadow: 1rem 1rem 30px black, -1px -10px   #000000;
-    background: #ffffff;
-  
-  
-  }
-/* GRUPO 2*/
-.imagen-principal {
-  height: 60%;
-  width: 100%;
-  text-align: center;
-}
-.cajaOftexto{
-  padding: 1rem;
-}
-#cajaCopiar{
-  padding: 1rem;
-}
-
-#botonC {
-  width: 10rem;
-  height: 4rem;
-  border: none;
-  border-radius: 19px;
-
-  color: #ffffff;
-  transition: 1s;
-  cursor: pointer;
-  
-  background: #000428;
-  background: -webkit-linear-gradient(to right, #004e92, #000428);  
-  background: linear-gradient(to right, #004e92, #000428);
-
+    border-radius: 3rem;
+    width: 1fr;
+    box-sizing: border-box;
+    overflow: hidden;
    
 }
+b{
+  font-size: 25px;
+  color: #000428;
 
+
+}
+p{
+  font-size: 15px;
+  
+}
+.imagen-principal {
+  width: 90%;
+  text-align: center;
+}
+.containerTxto{
+  height: 30%;
+  width: 1fr;
+  border-bottom: 5rem;
+}
 footer {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  height: 4vh;
+  height: 15vh;
+  width: 100%;
 
 }
 .copyright {
@@ -160,32 +122,5 @@ footer {
   font-style: italic;
 }
 
-
-/*configuracion area de resultado*/
-.mostrar{
-  refresh
-}
-
-/*Botones de interaccion animacion*/
-.botonD:hover{
-  color: #ffffff;
-  background: linear-gradient(to right, #004e92, #000428);
-}
-.botonBS:hover{
-  color: #ffffff;
-  background: linear-gradient(to right, #004e92, #000428);
-}
-.botonE:hover{
-  color: #ffffff;
-  background: linear-gradient(to right, #004e92, #000428);
- 
-}
-#botonC:hover{
-  color: #ffffff;
-  background: #141E30;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #243B55, #141E30); 
-  background: linear-gradient(to top, #243B55, #141E30);
-
-}
 
 

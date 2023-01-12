@@ -10,9 +10,8 @@
   <title>Encriptador</title>
 
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style2A.css">
   <link rel="stylesheet" href="./css/reset.css">
-  <script src="./js/scrip.js" type="text/javascript"></script>
-
 </head>
 
 <body>
@@ -27,25 +26,36 @@
           <img src="./img/Vector-Indicaciones.svg" alt="icono">
           Solo letras minusculas y sin acentos
         </p>
-        <textarea id="area-text" placeholder="Ingrese el texto aqui" autofocus="1"></textarea>
+        <textarea class="textAreaIndex" id="area-text" placeholder="Ingrese el texto aqui" autofocus="1"  rows="15"></textarea>
         <nav>
-          <button id="botonE" onclick="encriptar()">Encriptar</button>
-          <button id="botonD" onclick="keyText()">Desencriptar</button>
-          <button id="botonBS" onclick="bBorradoS()">Borrar Secreto</button>
+          <button type="button" id="botonE" class="botones">Encriptar Texto</button>
+          <button type="button" id="botonD" class="botones">Desencriptar</button>
+          <button type="button" id="botonBS" class="botones">Borrar</button>
         </nav>
       </div>
       <div id="contenedor-dos">
-        <p id="texto-final"></p>
-        <section id="ocultar">
-        <img class="imagen-principal " src="./img/imagen-principal.svg" alt="Logo2">
-        <div class="cajaOftexto">
-          <b>Ningún mensaje fue encontrado</b>
-          <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+        <section class="contenedorIT">
+          <br><br><br>
+          <img class="imagen-principal " src="./img/imagen-principal.svg" alt="Logo2">
+          <div class="containerTxto">
+            <br><br>
+            <b>Ningún mensaje fue encontrado</b>
+            <br><br>
+            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            <br>
+          </div>
+        </section>
+        <!--resultado-->
+        <div class="contenedorResultado ">
+          <br>
+          <br>
+          <br>
+          <p id="titulo">Felicidades! el mensaje esta cifrado &#128526</p>
+          <br>
+          <textarea class="resultado" name="resultado" rows="10"></textarea>
+          <button type="button" value="Click" onclick="copyResult()" id="botonC" class="botones">Copiar</button>
         </div>
-      </section>
-        <div id="cajaCopiar">
-          <button onclick="copyResult()" id="botonC">Copiar</button>
-        </div>
+        <!--resultado-->
       </div>
     </section>
   </main>
@@ -53,5 +63,6 @@
     <p class="copyright">&copy Copyright Alura Anthony R- 2022</p>
   </footer>
 </body>
+<script type="text/javascript" src="./js/jscrip0.js"></script>
 
 </html>
