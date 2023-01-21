@@ -1,28 +1,30 @@
-  // Declara las variables
-  var resultado = document.querySelector("#resultado");
 
-//////////funcion encriptar texto
-  var botonEn = document.querySelector("#botonD");
-  botonEn.onclick =Desencriptar ;
-  //////////
-  function encriptar() {
-    esconderFron ();
-    var mensaje = document.getElementById("textAreaIndex").value;
+function encriptar() {
+  esconderFron()
+    var mensaje = document.getElementById(".textAreaIndex").value;
     mensaje= mensaje.toLowerCase();
-    var mensajeEncriptado = mensaje.replace(/e/img, "enter");
-    var mensajeEncriptado = mensajeEncriptado.replace(/i/img, "imes");
-    var mensajeEncriptado = mensajeEncriptado.replace(/a/img, "ai");
-    var mensajeEncriptado = mensajeEncriptado.replace(/o/img, "ober");
-    var mensajeEncriptado = mensajeEncriptado.replace(/u/img, "ufat");
+
+    var mensajeEncriptado = mensaje.replace(/e/img, "enter").
+    mensajeEncriptado = mensajeEncriptado.replace(/i/img, "imes").
+    mensajeEncriptado = mensajeEncriptado.replace(/a/img, "ai").
+    mensajeEncriptado = mensajeEncriptado.replace(/o/img, "ober").
+    mensajeEncriptado = mensajeEncriptado.replace(/u/img, "ufat");
+
     // Muestra el mensaje encriptado en el área de resultado
-    document.querySelector("resultado").innerHTML=mensajeEncriptado;
-    document.querySelector("#ocultar").style.display= "show";
-    document.querySelector("#ocultar").style.display= "inherit";
+    document.querySelector("#resultado").innerHTML=mensajeEncriptado;
+
+    //document.querySelector("#ocultar").style.display= "show";
+    //document.querySelector("#ocultar").style.display= "inherit";
+    alert(encriptar)
 
   }
-  //////////
-  var botonEn = document.querySelector("#botonE");
-    botonEn.onclick = encriptar;
+   //////////
+   function recuperar(){
+    var mensaje = document.querySelector(".textAreaIndex");
+    return textAreaIndex.value;
+
+   }
+
   //////////
   function Desencriptar() {
 
@@ -34,28 +36,16 @@
     var mensajeEncriptado = mensajeEncriptado.replace(/ober/img, "o");
     var mensajeEncriptado = mensajeEncriptado.replace(/ufat/img, "u");
     // Muestra el mensaje encriptado en el área de resultado
-    document.querySelector("resultado").innerHTML=mensajeEncriptado;
+    document.querySelector("#resultado").innerHTML=mensajeEncriptado;
   }
-  //////////funcion copiar
-  var copiar = document.querySelector("#botonC");
-  copiar.onclick = copy1;
-  //////////
-  function copy1() {
-    // Seleccionar el texto del elemento de resultado
-    resultado.select();
-    // Ejecutar la acción de cortar
-    document.execCommand("cut");
-  }
-  //////////funcion borrar
-  const borradoS = document.querySelector("#botonBS");
-  borradoS.onclick = bBorradoS;
-  //////////
-  function bBorradoS() {
-  resultado.value = "";
-  }
+  
   //////////
 function esconderFron (){
   var contenedorOcultar = document.querySelector(".contenedorIT")
   contenedorOcultar.classList.add("ocultar")
-  
+}
+
+function cortar() {
+  resultado.select();
+  document.execCommand("cut");
 }

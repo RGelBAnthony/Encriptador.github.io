@@ -8,6 +8,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>Encriptador</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/style2A.css">
@@ -17,23 +21,23 @@
 <body>
   <header>
     <!-- logo de encabezado -->
-    <img src="img/logo1.svg" alt="icono2">
+    <img src="img/logo1.svg" alt="icono2" id="Logo">
   </header>
   <main>
     <section id="container">
       <div id="contenedor-uno">
-        <p id="m-1">
+        <h6 id="m-1">
           <img src="./img/Vector-Indicaciones.svg" alt="icono">
-          Solo letras minusculas y sin acentos
-        </p>
-        <textarea class="textAreaIndex" id="area-text" placeholder="Ingrese el texto aqui" autofocus="1"  rows="15"></textarea>
-        <nav>
-          <button type="button" id="botonE" class="botones">Encriptar Texto</button>
-          <button type="button" id="botonD" class="botones">Desencriptar</button>
-          <button type="button" id="botonBS" class="botones">Borrar</button>
-        </nav>
+        Solo letras minusculas y sin acentos
+        </h6>
+        <textarea  value="text" type="text" class="textAreaIndex" placeholder="Ingrese el texto aqui"
+          autofocus rows="10"></textarea>
+        <div class="btn">
+        <button type="button" id="botonE" class="botones">Encriptar Texto</button>
+        <button type="button" id="botonD" class="botones">Desencriptar</button>
       </div>
-      <div id="contenedor-dos">
+      </div>
+      <aside id="contenedor-dos">
         <section class="contenedorIT">
           <br><br><br>
           <img class="imagen-principal " src="./img/imagen-principal.svg" alt="Logo2">
@@ -46,23 +50,35 @@
           </div>
         </section>
         <!--resultado-->
-        <div class="contenedorResultado ">
+        <div class="contenedorResultado">
           <br>
           <br>
           <br>
           <p id="titulo">Felicidades! el mensaje esta cifrado &#128526</p>
           <br>
-          <textarea class="resultado" name="resultado" rows="10"></textarea>
-          <button type="button" value="Click" onclick="copyResult()" id="botonC" class="botones">Copiar</button>
+          <textarea name="resultado" type="text" placeholder="" id="resultado" rows="10"></textarea>
+          <button type="button" value="Click" id="botonCut" class="botones">Copiar</button>
         </div>
         <!--resultado-->
-      </div>
+      </aside>
     </section>
   </main>
   <footer>
-    <p class="copyright">&copy Copyright Alura Anthony R- 2022</p>
+    <p class="copyright">&copy Copyright Alura Anthony R- 2023</p>
   </footer>
 </body>
+<!--funciones del scrip-->
 <script type="text/javascript" src="./js/jscrip0.js"></script>
+<script>
+  // onclick de variables
 
+  //funcion encriptar texto
+  var botonEn = document.querySelector("#botonE");
+  botonEn.onclick = encriptar;
+  //funcion copiar
+  var limpiar = document.querySelector("#botonCut");
+  limpiar.onclick = cortar;
+
+
+</script>
 </html>

@@ -2,7 +2,7 @@
 
 /*area de resultado*/
 
-.resultado {
+#resultado {
   padding-top: 4rem;
   margin: auto;
   resize: none;
